@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <b>Q1. Find the Product.</b>
+    <p>
+    Write a program that takes an array as input from the user and find out the product of the elements.<br>
+    Note: You have to complete Find_Prod. No need to take any input.<br>
+    Input Format<br>
+    The input contains a single number N, followed by N numbers as array elements.<br>
+    Output Format<br>
+    Return the required answer.
+    </p>
+    <pre>
+    Constraints
+    1≤N≤201≤ElementoftheArray≤100
+    Example
+    Sample Input
+    5 1 2 3 4 5
+    Sample Output
+    120
+    </pre>
+    <b>Solution:</b>
+    <pre style="color: green;">
+    let arr = [1,2,3,4,5];
+    let res = arr.reduce((a,b) => a*b);
+    console.log(res);
+    </pre>
+
+    <b>Q2. Find the Sum.</b>
+    <p>
+    Write a program which takes an array as input from the user and find out the sum of the array elements.<br>
+    Note: You have to complete Find_Sum. No need to take any input.<br>
+    Input Format<br>
+    The input contains a single number N, followed by N numbers as array elements.<br>
+    Output Format<br>
+    Return the required answer.
+    </p>
+    <pre>
+    Constraints
+    1≤N≤1001≤ElementoftheArray≤1000
+    Note: You have to complete Find_Sum function. No need to take any input.
+    Example
+    Sample Input
+    5 1 2 3 4 5
+    Sample Output
+    15
+    </pre>
+    <pre style="color: green;">
+    let arr = [1,2,3,4,5];
+    let res = arr.reduce((a,b) => a+b);
+    console.log(res);
+    </pre>
+
+    <b>Q3. Count Occurrences</b>
+    <p>
+        You are given an array A containing N integer elements and an integer K, and your task is to return the count of 
+        occurrences of K in array A. <br>
+        Note: You have to complete findCount function. No need to take any input.<br>
+        Input Format<br>
+        The first line of the input contains two space-separated integers N and K, denoting the number of elements in the array A
+        and the element whose count needs to be determined, respectively. The second line of the input contains N space-separated 
+        integers, denoting the elements of the array A.<br>
+        Output Format<br>
+        Return the count of occurrences of K in array A.
+    </p>
+    <pre>
+    Constraints
+    1≤N≤1001≤K≤1001≤Ai≤1000≤100
+    Example
+    Sample Input
+    4 3 3 3 1 2
+    Sample Output
+    2
+    </pre>
+    <b>Solution:</b>
+    <pre style="color: green;">
+    let arr = [3,3,1,2];
+    let count = 0;
+    for(let i=0; i< arr.length; i++){
+        if(arr[i] === 3){
+            count++;
+        }
+    }
+    console.log(count);
+    </pre>
+
+    <b>Q4. Even Odd</b>
+    <p>
+    You are given an array A containing N integer elements, and your task is to return an array B ((having a size equal to 22)), 
+    where B[0] contains the sum of all even elements of array A and B[1] has the sum of all odd elements of the array A.
+    Note: You have to complete findEvenOdd function. No need to take any input. <br>
+    Input Format<br>
+    The first line of the input contains an integer N, denoting the number of elements in the array A. The second line of the input 
+    contains N space-separated integers, denoting the elements of array A.<br>
+    Output Format<br>
+    Return array B as output.
+    </p>
+    <pre>
+    Constraints
+    1≤N≤1001≤100 0≤Ai≤1000≤100
+    Example
+    Sample Input
+    7 1 2 3 4 5 6 7
+    Sample Output
+    12 16
+    </pre>
+    <b>Solution:</b>
+    <pre style="color: green;">
+    const arr = [1, 2, 3, 4, 5, 6, 7];
+    let B = [];
+    let even = arr.filter((x) => x % 2 == 0).reduce((accum, curr) => {
+        return accum + curr;
+    });
+    B[0] = even;
+    let odd = arr.filter((x) => x % 2 != 0).reduce((accum, curr) => {
+        return accum + curr;
+    });
+    B[1] = odd;
+    console.log(B);
+    </pre>
+
+    <b>Q5. Find whether the number is present or not</b>
+    <p>
+    Write a program which takes an array as input from the user and a number. Check whether the number is present or not.
+    Note: You have to complete Find_Num. No need to take any input.<br>
+    Input Format<br>
+    The first line contains an integer N, denoting the size of the array. The second line contains N space-separated integers, 
+    denoting the elements of the array. The third line contains an integer M, denoting the element that needs to be searched.
+    Output Format<br>
+    Return the "YES" (without quotes) else return "NO" (without quotes).
+    </p>
+    <pre>
+    Constraints
+    1≤N≤1001≤ElementoftheArray≤1000
+    Example
+    Sample Input
+    5 1 2 3 4 5 2
+    Sample Output
+    YES
+    </pre>
+    <b>Solution:</b>
+    <pre style="color: green;">
+        function find_num(){
+            let arr = [1,2,3,4,5];
+        
+            for(let i=0; i < arr.length; i++){
+                if(arr[i] === 2){
+                    return "YES";
+                }
+            }
+            return "NO";
+        }
+        console.log(find_num());
+    </pre>
+
+    <b>Q6. Higher Age</b>
+    <p>
+    You are given an array A containing the age of persons in your locality, and your task is to find and return an array 
+    containing the age of persons that are over 1818 (18(18 included)).<br>
+    Note: Also, in the output array, the age should be in the same order as in the input array. You have to complete highAge 
+    function. No need to take any input. <br>
+    Input Format<br>
+    The first line of the input contains an integer N, denoting the number of person in your locality. The second line of the input 
+    contains N space-separated integers, denoting the age of persons in your locality.<br>
+    Output Format<br>
+    Return the array containing the age of persons that are over 1818 (18(18 included)). 
+    </p>
+    <pre>
+    Constraints
+    1≤N≤1001≤100 0≤Ai≤1000≤100    
+    Example
+    Sample Input
+    6 11 23 3 45 72 68
+    Sample Output
+    23 45 72 68
+    </pre>
+    <b>Solution:</b>
+    <pre style="color: green;">
+    var ages = [11, 23, 3, 45, 72, 68];
+    var res = ages.filter(x => x > 18);
+    console.log(res);
+    </pre>
+    <b>Q7. Increment the Array Elements</b>
+    <p>
+        You are provided an array of integers and you have to increment all array elements by 1 and then print whole array.
+        You have to complete Inc_Arr. No need to take any input. <br>
+        Input Format <br>
+        The input contains a single number N, then N array elements as input. <br>
+        Output Format <br>
+        Print the required answer in the function itself.
+    </p>
+    <pre>
+    Constraints
+    1≤N≤1001≤ElementoftheArray≤1000
+    Example
+    Sample Input
+    5 1 2 3 4 5
+    Sample Output
+    2 3 4 5 6 
+    </pre>
+
+    <b>Solution:</b>
+    <pre style="color: green;">
+    let array = [1,2,3,4,5];
+    let result = array.map(x => x + 1);
+    console.log(array.length +" "+ result);
+    </pre>
+
+    <b>Q8. Pass or Fail</b>
+    <p>
+    You are given an array A containing the maths marks of students in your class, and your task is to determine if all the 
+    students pass in your class or not. A student is declared pass if his maths marks are greater than or equal to 3232.
+    If all the students pass in your class, return "YES" (without quotes); otherwise, return "NO" (without quotes).<br>
+    Note: You have to complete isAllPass function. No need to take any input.<br>
+    Input Format<br>
+    The first line of the input contains an integer N, denoting the number of students in your class. The second line of the input 
+    contains N space-separated integers, denoting the maths marks of students in your class.<br>
+    Output Format<br>
+    Return "YES" (without quotes) if all the students pass in your class; other wise, print "NO" (without quotes).
+    </p>
+    <pre>
+    Constraints
+    1≤N≤1001≤100 0≤Ai≤1000≤100
+    Example
+    Sample Input
+    7 13 89 45 98 67 45 54
+    Sample Output
+    NO
+    </pre>
+    <b>Solution:</b>
+    <pre style="color: green;">
+        function  isAllPass(){
+            let arr = [13,89,45,98,67,45,54];
+        
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] >= 32){
+                    return "YES";
+                }
+                return "NO"
+            }
+        }
+        console.log( isAllPass());
+    </pre>
+
+    <b>Q10. Min and Max</b>
+    <p>
+    Q10. Min and Max
+    Congratulations on making up to this question. Let us give you a fairly simple array problem to solve. If you know how to 
+    iterate through the array, you will easily be able to solve this. The problem statement is simple- given N elements, find the 
+    minimum and maximum numbers among those elements. <br>
+    Input format <br>
+    First-line contains N representing the length of the array. The second line contains N space-separated integers. <br>
+    Output format <br>
+    Return minimum and maximum elements.
+    </p>
+    <pre>
+    Constraints
+    1<=N<1071<=<107 0<=A[i]<=1070<=[]<=107    
+    Example
+    Input
+    66 33 11 44 66 22 77
+    Output
+    11 77 
+    </pre>
+    <b>Solution:</b>
+    <pre style="color: green;">
+    let arr = [66,33,11,44,66,22,77];
+    let result = Math.min(...arr) +" "+Math.max(...arr);
+    console.log(result);    
+    </pre>
+    <script src="./index.js"></script>
+    <script src="./question.js"></script>
+    
+</body>
+
+</html>
